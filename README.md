@@ -1,6 +1,6 @@
 # News Aggregator
 
-News Aggregator is a Django-REST API. It uses external news APIs and aggregate their results. I have used Django-REST framework to develop this. This is my submission for the Stellic Assessment test. 
+News Aggregator is a project developed using Django-REST framework. As the name suggests, the project aims to aggregate news articles from various external APIs. It is a submission for the backend position at Stellic. The project utilizes external APIs to fetch news articles and provides an endpoint for users to retrieve the aggregated list of top 10 articles from Reddit and News API. In addition to this, the project also includes an endpoint for users to favorite news articles by specifying their ID and user name. The project is designed to fullfil the requirements specified in the problem description. 
 
 ## Table of Contents
 
