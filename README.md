@@ -33,9 +33,9 @@ The project should now be available at http://localhost:8000/.
 
 This API is designed to aggregate data from two external sources: Reddit and News API. The primary aim of the API is to provide users with a platform to fetch news articles and search for news articles with similar headlines. The `news/` endpoint also maintains an expiry limit for all the results. If request is past the expiry limit, it fetches from the external APIs else it retrieves from the database. It provides a good balance between performance and relevance.
 
-Apart from fetching news articles, the API allows users to mark articles as favorites. Users can mark articles as favorites by sending a POST request to the /news/favourite/ endpoint, which accepts the article ID and the user ID. Similarly, users can retrieve all their favorite articles by sending a GET request to the /news/favourite/ endpoint.
+Apart from fetching news articles, the API allows users to mark articles as favorites. Users can mark articles as favorites by sending a POST request to the `/news/favourite/` endpoint, which accepts the article `id` and the `user` name as parameters. Similarly, users can retrieve all their favorite articles by sending a GET request to the `/news/favourite/` endpoint with `user` as a parameter.
 
-It's important to note that only these two endpoints are available for this API. The API has been designed to provide a simple and effective way for users to fetch and manage their favorite news articles.
+Below are the details of all the endpoints available.
 
 ### Endpoints
 
