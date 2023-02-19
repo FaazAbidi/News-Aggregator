@@ -120,6 +120,10 @@ It was not clear whether it's required to enter users in the database or not. Si
 
 Another ambiguity was related to this as well. It was not clear when to create new users. Therefore, a new user is created when there's a new name that comes as a parameter through the favorite endpoint.
 
+## External APIs
+
+dsadsadsa
+
 ## Design Patterns
 
 Details on any design patterns used in your project. This could include information on the pattern, why it was chosen, and how it was implemented.
