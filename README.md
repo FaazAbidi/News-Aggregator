@@ -11,7 +11,6 @@ A brief description of your project.
 - [External APIs](#external-apis)
 - [Design Patterns](#design-patterns)
 - [Testing](#testing)
-- [License](#license)
 
 ## Installation
 
