@@ -1,6 +1,6 @@
 # News Aggregator
 
-A brief description of your project.
+News Aggregator is Django-REST API. It uses external news APIs and aggregate the results of both. This is my submission for the Stellic Assessment test. 
 
 ## Table of Contents
 
