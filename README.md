@@ -19,7 +19,7 @@ News Aggregator is a Django-REST API. It uses external news APIs and aggregate t
 Here's a step-by-step guide on how to set up a Django project named "NewsAggregator":
 
 1. Clone the repository to your local machine:
-`git clone https://github.com/your-username/your-project.git`
+`git clone https://github.com/FaazAbidi/News-Aggregator.git`
 
 2. Install the project dependencies:
 `pip install -r requirements.txt`
