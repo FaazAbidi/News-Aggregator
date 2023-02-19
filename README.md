@@ -34,7 +34,24 @@ ssadsadsad
 
 ### Endpoints
 
-1. #### `/news/`
+1. #### `/`
+
+This endpoint is a landing page for the API with a welcome message.
+
+**Method**: `GET`
+
+**URL Parameters**: None
+
+**Request Body**: None
+
+**Response Body**: 
+```
+{
+  "message": "Welcome to News Aggregator API"
+}
+```
+
+2. #### `/news/`
 
 This endpoint retrieves a list of all books in the database.
 
@@ -56,7 +73,7 @@ This endpoint retrieves a list of all books in the database.
 ```
 
 
-2. #### `/news/favourite/`
+3. #### `/news/favourite/`
 
 This endpoint retrieves a list of all books in the database.
 
@@ -77,7 +94,7 @@ This endpoint retrieves a list of all books in the database.
 }
 ```
                       
- 3. #### `/news/favourite/`
+ 4. #### `/news/favourite/`
 
 This endpoint retrieves a list of all books in the database.
 
