@@ -150,7 +150,7 @@ You can also access the ERD [Here](https://drawsql.app/teams/doxa/diagrams/newsa
 
 One of the required features for this API was to store the data from the API into a database such that, if a request is repeated, the response is returned from the database and does not need a new API call. It can be achieved, as suggested in the description, by some expiry limit. If request is past the expiry limit then fresh call is made. 
 
-To implement this feature, I designed my schema to include a `fetched_at` column in the `news_article` table. This column is updated for each row that's part of the response whenever there is a fetch request from the database, allowing for easy tracking of whether the expiry rate has passed or not. When a new request comes in, the system checks the `last_fetched` value from the latest news article entry and compares it with the current time using `datetime.now()`. I have currently set the expiry limit to be `5 minutes`.
+To implement this feature, I designed my schema to include a `fetched_at` column in the `news_article` table. This column is updated for each row that's part of the response whenever there is a fetch request from the database, allowing for easy tracking of whether the expiry limit has passed or not. When a new request comes in, the system checks the `last_fetched` value from the latest news article entry and compares it with the current time using `datetime.now()`. I have currently set the expiry limit to be `5 minutes`.
 
 ## Assumptions
 
@@ -158,13 +158,13 @@ There were a few ambiguities in the problem description, so, a few assumptions w
 
 It was not clear whether it's required to enter users in the database or not. Since we are storing user's favorites, it was assumed that there should be an entity for users for storing user's data. However, the issue with this is that we don't have a proper identifier for a user. From the endpoint, we are accessing users based on their names not on their ID, which is not ideal if users with the same names will use this API.
 
-Another ambiguity was related to this as well. It was not clear when to create new users. Therefore, a new user is created when there's a new name that comes as a parameter through the favorite endpoint.
+Another ambiguity was similar to the former. It was not clear when to create new users. Therefore, I decided to create a new user when there's a new name comes as a parameter through the `/news/favorite/` endpoint.
 
 Lastly, in the sample requests provided, an auth token was included, but it was not mentioned anywhere in the project description. As a result, I assumed that an auth token is not required for the endpoints and did not implement it in the API.
 
 ## External APIs
 
-This api aggregates news articles from two external APIs, namely Reddit (via the Pushshift wrapper) and News API. In particular, the News endpoint of the API fetches news articles from News API and returns a list of the top 10 articles, which are then combined with the top 10 articles fetched from the Reddit endpoint.
+As mentioned before, this api aggregates news articles from two external APIs, namely [Reddit](https://www.reddit.com/r/news/) (via the [Pushshift](https://github.com/pushshift/api) wrapper) and [NewsAPI](https://newsapi.org/). In particular, the `news/` endpoint of the API fetches news articles from NewsAPI and returns a list of the top 10 articles, which are then combined with the top 10 articles fetched from the Reddit endpoint.
 
 To fetch the news articles, I used the official News API which provides access to various news sources worldwide. The Reddit endpoint, on the other hand, uses the Pushshift API, which provides a more flexible and efficient way of accessing Reddit data.
 
@@ -175,9 +175,9 @@ Note that for both endpoints, I am only taking the top 10 articles from each API
 
 ## Project Architecure
 
-The project follows the Django MVT (Model-View-Template) architecture for the most part. I created two Django apps to organize the code, one for the API and the other for models and other things. The API app is kept isolated, so it's easy to test and reuse.
+The project follows the Django MVT (Model-View-Template) architecture for the most part. I created two Django apps to organize the code, one for the API named `api` and the other for models and other things named `base`. The `api` app is kept isolated, so it's easy to test and reuse.
 
-To decouple the views and to keep the code maintainable and extensible, I implemented a glimpse of the repository architecture. I created repository modules for both the models, which abstracts away the data access from views. It doesn't matter to views.py whether the data is coming from the database or external APIs. This helped to keep the code more decoupled and easy to maintain.
+To decouple the views and to keep the code maintainable and extensible, I implemented a little of the repository architecture. I created repository modules for both the models, which abstracts away the data access from views. It doesn't matter to `views.py` whether the data is coming from the database or external APIs. This helped to keep the code more decoupled and easy to maintain.
 
 ## Testing
 
