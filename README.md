@@ -160,7 +160,7 @@ It was not clear whether it's required to enter users in the database or not. Si
 
 Another ambiguity was similar to the former. It was not clear when to create new users. Therefore, I decided to create a new user when there's a new name comes as a parameter through the `/news/favorite/` endpoint.
 
-Lastly, in the sample requests provided, an auth token was included, but it was not mentioned anywhere in the project description. As a result, I assumed that an auth token is not required for the endpoints and did not implement it in the API.
+Lastly, in the sample requests provided, an auth token was included, but it was not mentioned anywhere in the problem description. As a result, I assumed that an auth token is not required for the endpoints and did not implement it in the API.
 
 ## External APIs
 
