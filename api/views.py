@@ -5,6 +5,14 @@ from api.serializers import NewsArticleSerializer, UserLikedNewsSerializerGet, U
 
 
 @api_view(['GET'])
+def home(request):
+    '''
+    This is a index endpoint that deals with only GET requests. It returns a welcome message.
+    '''
+    return Response({"message": "Welcome to News Aggregator API"})
+
+
+@api_view(['GET'])
 def news(request):
     '''
     This is a news endpoint that deals with only GET requests. It returns News Articles either

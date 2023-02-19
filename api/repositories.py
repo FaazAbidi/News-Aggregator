@@ -35,7 +35,6 @@ class NewsArticleRepository:
         # or fetch articles if there are no articles in the database
         if (new_search) or (not NewsArticle.objects.all().exists()) or (last_fetched_article.fetched_at < now):
             # update articles from external apis
-            print("Updating articles from external apis")
             self.__addArticlesFromExternalApis(query)
             
         # get articles from database
