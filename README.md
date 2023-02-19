@@ -130,9 +130,11 @@ Note that for both endpoints, I am only taking the top 10 articles from each API
 1. Reddit (PushShift): `https://api.pushshift.io/reddit/search/submission?subreddit=news`
 2. NewsApi: `https://newsapi.org/v2/everything` & `https://newsapi.org/v2/top-headlines?country=us` 
 
-## Design Patterns
+## Project Architecure
 
-Details on any design patterns used in your project. This could include information on the pattern, why it was chosen, and how it was implemented.
+The project follows the Django MVT (Model-View-Template) architecture for the most part. I created two Django apps to organize the code, one for the API and the other for models and other things. The API app is kept isolated, so it's easy to test and reuse.
+
+To decouple the views and to keep the code maintainable and extensible, I implemented a glimpse of the repository architecture. I created repository modules for both the models, which abstracts away the data access from views. It doesn't matter to views.py whether the data is coming from the database or external APIs. This helped to keep the code more decoupled and easy to maintain.
 
 ## Testing
 
