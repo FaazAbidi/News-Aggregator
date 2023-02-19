@@ -160,6 +160,8 @@ It was not clear whether it's required to enter users in the database or not. Si
 
 Another ambiguity was related to this as well. It was not clear when to create new users. Therefore, a new user is created when there's a new name that comes as a parameter through the favorite endpoint.
 
+Lastly, in the sample requests provided, an auth token was included, but it was not mentioned anywhere in the project description. As a result, I assumed that an auth token is not required for the endpoints and did not implement it in the API.
+
 ## External APIs
 
 This api aggregates news articles from two external APIs, namely Reddit (via the Pushshift wrapper) and News API. In particular, the News endpoint of the API fetches news articles from News API and returns a list of the top 10 articles, which are then combined with the top 10 articles fetched from the Reddit endpoint.
