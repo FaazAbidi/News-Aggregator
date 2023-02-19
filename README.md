@@ -7,6 +7,7 @@ News Aggregator is Django-REST API. It uses external news APIs and aggregate the
 - [Installation](#installation)
 - [Usage](#usage)
 - [Database Schema](#database-schema)
+- [Expiry Rate Feature](#expiry-rate-feature)
 - [Assumptions](#assumptions)
 - [External APIs](#external-apis)
 - [Project Architecure](#project-architecure)
@@ -110,6 +111,12 @@ To implement the schema, SQLite was used, as it was required in the assessment. 
 <img src="https://i.ibb.co/ZXnpmCB/schema.png" alt="Schema" style="height: 300px; width:600px;"/>
 
 You can also access the ERD [Here](https://i.ibb.co/ZXnpmCB/schema.png)
+
+## Expiry Rate Feature
+
+One required feature for this API was to store the data from the API into a database such that, if a request is repeated, the response is returned from the database and does not need a new API call. It can be, as suggested in the description, by some expiry limit. If request is past the expiry limit then fresh call is made. 
+
+My approach to acheive this feature was to design my schema accordingly. I added a `fetched_at` column in `news_article` table which is updated for every row whenever there's a fetch request from database. This is useful for checking if the expiry rate is past or not. Whenever a new request comes, it checks the `last_fetched` from the latest news article entry and compares it with `datetime.now()`. Right now, I have set the expiry limit to be `5 minutes`.
 
 ## Assumptions
 
