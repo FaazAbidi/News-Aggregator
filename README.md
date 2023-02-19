@@ -127,7 +127,7 @@ To implement the schema, SQLite was used, as it was required in the assessment. 
 
 <img src="https://i.ibb.co/ZXnpmCB/schema.png" alt="Schema" style="height: 300px; width:600px;"/>
 
-You can also access the ERD [Here](https://i.ibb.co/ZXnpmCB/schema.png)
+You can also access the ERD [Here](https://drawsql.app/teams/doxa/diagrams/newsaggregator)
 
 ## Expiry Rate Feature
 
