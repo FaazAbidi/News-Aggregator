@@ -73,14 +73,19 @@ This endpoint fetches a list of news articles either from the database or extern
     "headline": "More Ransomware Victims Are Refusing to Pay Hackers",
     "link": "https://gizmodo.com/ransomware-hackers-blockchain-chainalysis-1850005764",
     "source": "newsapi"
-   }
+   },
+  {
+    "headline": "N.J. man hired hitman for $20K in Bitcoin to kill a 14-year-old, prosecutors say",
+    "link": "https://www.nbcnews.com/news/us-news/new-jersey-man-hired-hitman-paid-20k-bitcoin-kill-14-year-old-prosecut-rcna68971",
+    "source": "reddit"
+    },
 ]
 ```
 
 
 3. #### `/news/favourite/`
 
-This endpoint allows users to toggle their favorite news articles by specifying the article ID and their username. The endpoint then retrieves the updated news article with the new favorite value.
+This endpoint allows users to toggle their favorite news articles by specifying the article ID and their name. The endpoint then retrieves the updated news article with the new favorite value.
 
 **Method**: `POST`
 
@@ -118,7 +123,14 @@ This endpoint retrieves a list of all favourite news articles of the specified u
     "source": "newsapi",
     "favourite" : true,
     "id" : 201
-   }
+   },
+   {
+    "headline": "N.J. man hired hitman for $20K in Bitcoin to kill a 14-year-old, prosecutors say",
+    "link": "https://www.nbcnews.com/news/us-news/new-jersey-man-hired-hitman-paid-20k-bitcoin-kill-14-year-old-prosecut-rcna68971",
+    "source": "reddit"
+    "favourite" : true,
+    "id" : 187
+    },
 ]
 ```
 
