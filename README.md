@@ -12,6 +12,7 @@ News Aggregator is Django-REST API. It uses external news APIs and aggregate the
 - [External APIs](#external-apis)
 - [Project Architecure](#project-architecure)
 - [Testing](#testing)
+- [Remarks](#remarks)
 
 ## Installation
 
@@ -169,3 +170,9 @@ The first set of tests were for the external APIs used in the application, which
 The second set of tests were for the database operations. The tests covered create, update, insert, delete, and query operations for the models in the application. These tests ensure that the database operations are executed properly and the models are functioning as expected.
 
 Overall, these tests provide a good level of confidence that the application is working as intended and that any changes or updates will not cause unexpected issues. Coverage of these are not that much and it can surely be increased.
+
+## Remarks
+
+I hope I am able to demonstrate my skills effectively considering the limited time I spent on this. If there's any query related to this project, please reach out to me. I look forward to your feedback!
+
+Note: I have intentionally pushed `.env` file for the demonstration. It's not advised to so.
