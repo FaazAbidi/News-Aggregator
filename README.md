@@ -80,7 +80,7 @@ This endpoint fetches a list of news articles either from the database or extern
 
 3. #### `/news/favourite/`
 
-This endpoint toggles the favourite news article specified using `id` for the specified user specified using `name`. This also retrieves that news article with the updated favourite value.
+This endpoint allows users to toggle their favorite news articles by specifying the article ID and their username. The endpoint then retrieves the updated news article with the new favorite value.
 
 **Method**: `POST`
 
