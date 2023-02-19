@@ -58,7 +58,7 @@ This endpoint is a landing page for the API with a welcome message.
 
 2. #### `/news/`
 
-This endpoint retrieves a list of all news articles either from database or from external APIs depending upon the expiry limit.
+This endpoint fetches a list of news articles either from the database or external APIs based on the expiry limit. It also provides support for searching through the query parameter to filter news articles based on search criteria.
 
 **Method**: `GET`
 
