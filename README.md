@@ -121,7 +121,14 @@ Another ambiguity was related to this as well. It was not clear when to create n
 
 ## External APIs
 
-dsadsadsa
+This api aggregates news articles from two external APIs, namely Reddit (via the Pushshift wrapper) and News API. In particular, the News endpoint of the API fetches news articles from News API and returns a list of the top 10 articles, which are then combined with the top 10 articles fetched from the Reddit endpoint.
+
+To fetch the news articles, I used the official News API which provides access to various news sources worldwide. The Reddit endpoint, on the other hand, uses the Pushshift API, which provides a more flexible and efficient way of accessing Reddit data.
+
+Note that for both endpoints, I am only taking the top 10 articles from each API, which should provide a good balance between relevance and performance.
+
+1. Reddit (PushShift): `https://api.pushshift.io/reddit/search/submission?subreddit=news`
+2. NewsApi: `https://newsapi.org/v2/everything` & `https://newsapi.org/v2/top-headlines?country=us` 
 
 ## Design Patterns
 
