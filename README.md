@@ -58,7 +58,7 @@ This endpoint is a landing page for the API with a welcome message.
 
 2. #### `/news/`
 
-This endpoint retrieves a list of all books in the database.
+This endpoint retrieves a list of all news articles either from database or from external APIs depending upon the expiry limit.
 
 **Method**: `GET`
 
@@ -80,7 +80,7 @@ This endpoint retrieves a list of all books in the database.
 
 3. #### `/news/favourite/`
 
-This endpoint retrieves a list of all books in the database.
+This endpoint toggles the favourite news article specified using `id` for the specified user specified using `name`. This also retrieves that news article with the updated favourite value.
 
 **Method**: `POST`
 
@@ -101,7 +101,7 @@ This endpoint retrieves a list of all books in the database.
                       
  4. #### `/news/favourite/`
 
-This endpoint retrieves a list of all books in the database.
+This endpoint retrieves a list of all favourite news articles of the specified user.
 
 **Method**: `GET`
 
