@@ -193,4 +193,4 @@ Overall, these tests provide a good level of confidence that the application is 
 
 I hope I am able to demonstrate my skills effectively considering the limited time I spent on this. If there's any query related to this project, please reach out to me. I look forward to your feedback!
 
-Note: I have intentionally pushed `.env` file for the demonstration. It's not advised to so.
+Note: I have intentionally pushed `.env` file for the demonstration. It's not advised to do so.
