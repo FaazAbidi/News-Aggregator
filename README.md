@@ -9,7 +9,7 @@ A brief description of your project.
 - [Database Schema](#database-schema)
 - [Assumptions](#assumptions)
 - [External APIs](#external-apis)
-- [Design Patterns](#design-patterns)
+- [Project Architecure](#project-architecure)
 - [Testing](#testing)
 
 ## Installation
@@ -29,7 +29,7 @@ The project should now be available at http://localhost:8000/.
 
 ## Usage
 
-This is a simple Django based API. It has only two endpoints. Below are the details of them.
+ssadsadsad
 
 ### Endpoints
 
@@ -138,4 +138,10 @@ To decouple the views and to keep the code maintainable and extensible, I implem
 
 ## Testing
 
-Instructions on how to contribute to your project, including details on how to submit bug reports, feature requests, or pull requests.
+To ensure the stability and reliability of the application, I implemented a suite of unit tests. There are 8 unit tests in total, focused on external API calls and database CRUD operations.
+
+The first set of tests were for the external APIs used in the application, which are Pushshift API for Reddit and News API. These tests include verifying the status code of the response and the format of the returned data. The tests ensure that the application can handle different responses from the external APIs and can parse the data correctly.
+
+The second set of tests were for the database operations. The tests covered create, update, insert, delete, and query operations for the models in the application. These tests ensure that the database operations are executed properly and the models are functioning as expected.
+
+Overall, these tests provide a good level of confidence that the application is working as intended and that any changes or updates will not cause unexpected issues. Coverage of these are not that much and it can surely be increased.
