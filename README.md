@@ -33,7 +33,7 @@ The project should now be available at http://localhost:8000/.
 
 This API is designed to aggregate data from two external sources: Reddit and News API. The primary aim of the API is to provide users with a platform to fetch news articles and search for news articles with similar headlines. The `news/` endpoint also maintains an expiry limit for all the results. If request is past the expiry limit, it fetches from the external APIs else it retrieves from the database. It provides a good balance between performance and relevance.
 
-Apart from fetching news articles, the API allows users to mark articles as favorites. Users can mark articles as favorites by sending a POST request to the `/news/favourite/` endpoint, which accepts the article `id` and the `user` name as parameters. Similarly, users can retrieve all their favorite articles by sending a GET request to the `/news/favourite/` endpoint with `user` as a parameter.
+Apart from fetching news articles, the API allows users to mark articles as favorites. Users can mark articles as favorites by sending a `POST` request to the `/news/favourite/` endpoint, which accepts the article `id` and the `user` name as parameters. Similarly, users can retrieve all their favorite articles by sending a `GET` request to the `/news/favourite/` endpoint with `user` as a parameter.
 
 Below are the details of all the endpoints available.
 
@@ -85,7 +85,7 @@ This endpoint fetches a list of news articles either from the database or extern
 
 3. #### `/news/favourite/`
 
-This endpoint allows users to toggle their favorite news articles by specifying the article ID and their name. The endpoint then retrieves the updated news article with the new favorite value.
+This endpoint allows users to toggle their favorite news articles by specifying the article id and their name. The endpoint then retrieves the updated news article with the updated favorite value.
 
 **Method**: `POST`
 
@@ -138,7 +138,7 @@ This endpoint retrieves a list of all favourite news articles of the specified u
 
 The database schema for this project was created based on the problem description and requirements. The schema consists of two main entities - Users and Articles - and a third entity, Favourite Articles, to resolve the many-to-many relationship between Users and Articles.
 
-I created this schema using an online tool called drawSQL. The schema was designed to be simple and intuitive, while still meeting all the necessary requirements. This schema was then mapped directly to the Django models used in the project.
+I created the ERD for this schema using an online tool called drawSQL. The schema was designed to be simple and intuitive, while still meeting all the necessary requirements. This schema was then mapped directly to the Django models used in the project.
 
 To implement the schema, SQLite was used, as it was required in the assessment. The database schema was designed to be easily scalable, allowing for the addition of new entities or attributes as needed. The schema was also designed with data consistency and integrity in mind, to ensure that all data stored in the database is accurate and reliable.
 
@@ -148,9 +148,9 @@ You can also access the ERD [Here](https://drawsql.app/teams/doxa/diagrams/newsa
 
 ## Expiry Rate Feature
 
-One required feature for this API was to store the data from the API into a database such that, if a request is repeated, the response is returned from the database and does not need a new API call. It can be, as suggested in the description, by some expiry limit. If request is past the expiry limit then fresh call is made. 
+One of the required features for this API was to store the data from the API into a database such that, if a request is repeated, the response is returned from the database and does not need a new API call. It can be achieved, as suggested in the description, by some expiry limit. If request is past the expiry limit then fresh call is made. 
 
-My approach to acheive this feature was to design my schema accordingly. I added a `fetched_at` column in `news_article` table which is updated for every row whenever there's a fetch request from database. This is useful for checking if the expiry rate is past or not. Whenever a new request comes, it checks the `last_fetched` from the latest news article entry and compares it with `datetime.now()`. Right now, I have set the expiry limit to be `5 minutes`.
+To implement this feature, I designed my schema to include a `fetched_at` column in the `news_article` table. This column is updated for each row that's part of the response whenever there is a fetch request from the database, allowing for easy tracking of whether the expiry rate has passed or not. When a new request comes in, the system checks the `last_fetched` value from the latest news article entry and compares it with the current time using `datetime.now()`. I have currently set the expiry limit to be `5 minutes`.
 
 ## Assumptions
 
